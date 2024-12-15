@@ -1,0 +1,117 @@
+<html><head> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&amp;display=swap" rel="stylesheet">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="App Downは無料のアプリストアです。">  
+      
+      <style>
+    *{
+      border-radius:10px;
+    }
+      
+    .text
+    
+    {
+      vertical-align: 80%; color:black; 
+    }
+    
+    a{text-decoration:none;}
+    .waku{
+      display: inline-block; _display: inline;
+      background: #fff;
+      border: 1px #ccc solid;
+      box-shadow: 0 2px 3px 0 #ddd;
+      font-size: 100%;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    img{
+      display: inline-block; _display: inline; 
+    }
+    .size1
+    {
+      font-size: 28px;
+      color: #000;
+      vertical-align: 40%;
+    }
+    </style>
+    <title>App Down</title> <link rel="shortcut icon" sizes="64x64" href="/img/apps-down.png"></head><body style="font-family: &quot;M PLUS 1&quot;, sans-serif;font-optical-sizing: auto;font-weight: <weight>;font-style: normal;">
+    <header style="border-bottom: 1px #ddd solid;border-radius: 0px;margin-bottom: 42px;margin-left: -8px;margin-right: -8px;"><img style="height: 45px;border: 1px #e8e8e8 solid;border-radius: 50%;width: 45px;margin-left: 12px;" src="img/apps-down.png"><font style="font-family: Arial;font-size: 24px;vertical-align: 58%;padding-left: 10px;padding-right: 10px;">App Down</font> <font class="text"><a style="color:black;" href="https://ku-daa.web.app/">ストアホーム</a></font>　
+    
+    
+    
+     &nbsp; 
+    <font style="vertical-align: 80%; color:black; cursor: pointer;" class="openBtn">アプリ一覧</font></header>
+  <h1 style="margin-left: 12px;">404 not found</h1>
+  
+  <footer>©2024 - U Software</footer>
+    
+    
+      <dialog class="custom-dialog" style="border-radius: 10px;border-color: #a2a2a2;">
+         <font class="closeBtn" style="cursor: pointer;">✖</font>
+            <div style="padding: 1em">
+              <h2>アプリ一覧</h2><p></p><div class="waku">
+    <img src="appstore_files/image1.png" style="border-radius:10px;"><a href="https://umaidango.github.io/apps/original_clock">Original Clock</a></div> &nbsp; &nbsp;<div class="waku">
+    <img style="border-radius:10px;height: 65px;" src="appstore_files/mini-my-widget-logo.png"><a href="https://umaidango.github.io/apps/my_widget">MY Widget</a></div>
+              <p></p>
+          </div></dialog>
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+          <script>
+            // 6. Dialog & openBtn & closeBtn Element
+            const dialog = document.querySelector("dialog");
+            const openBtn = document.querySelector(".openBtn");
+            const closeBtn = document.querySelector(".closeBtn");
+    
+            openBtn.addEventListener("click", () => {
+              // 7. HTMLDialogElement.showModal()
+              // => open属性追加 & top-layer & backdrop の追加
+              // => top-layer は z-index を設定しなくても一番上の Layer として表示されるので、
+              // => Dialog が表示された場合に下の Layer にアクセスすることができせん。
+              // => backdrop は背景色を設定するために利用することができます。デフォルトでは薄いグレーが設定されています。
+              dialog.showModal();
+            });
+    
+            closeBtn.addEventListener("click", () => {
+              // 8. HTMLDialogElement.close() を使用することで、open属性を削除して、Dialogを非表示にすることができます。
+              dialog.close();
+            });
+    
+            dialog.addEventListener("close", (e) => {
+              // 9. close イベント
+              // => Dialog を非表示にする場合に close イベントを設定することで Dialog が非表示になったことを検知することができます。
+              console.log("Dialog が Close されました");
+            });
+    
+            /**
+             * 10. Dialog の外側のクリック
+             * => Dialog の外側にある背景をクリックすることで Dialog を非表示にする場合の設定を確認していきます。
+             * => モーダルウィンドウでは背景をオーバーレイと呼ぶことがありますが、オーバーレイをクリックした場合に表示されている Dialog を非表示にします。
+             */
+            dialog.addEventListener("click", (event) => {
+              console.log("Dialog_Click");
+              console.log(event.target);
+              // ポイント1: 外側の領域も含めた DialogElementを Clickしていたら、Closeする
+              // ポイント2: dialogタグ内部の divタグより内側は、対象外にする
+              if (event.target === dialog) {
+                dialog.close();
+              }
+            });
+          </script>
+    
+    
+       
+    
+    
+    
+    
+    </body></html>

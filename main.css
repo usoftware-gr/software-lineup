@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+*{
+    font-family: Noto Sans JP;
+}
+
+#icon img{
+    height: 48px;
+    vertical-align: 10%;
+    margin-right: -15px;
+
+}
+
+#icon span{
+    font-size: 24px;
+    vertical-align: 45%;
+    margin-left: 5px;
+    
+}
+
+#icon{
+    user-select: none;
+    display: inline-block;
+}
+
+#header_main{
+    position: fixed;
+    border-bottom:0.1px #eee solid;
+    box-shadow: 0px 0px 2px 0px #ddd;
+    margin: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    padding-top: 10px;
+    animation: up_01a;
+    animation-duration: 1s;
+}
+
+@keyframes up_01a
+{
+    0%{
+        transform: translateY(-100%);
+        
+    }
+
+    100%{
+        transform: translateY(0%);
+        
+    }
+}
+
+
+@keyframes down_01a
+{
+    0%{
+        transform: translate(-50%, 100%);
+        
+    }
+
+    100%{
+        transform: translate(-50%, 0%);
+        
+    }
+}
+
+@keyframes down_01_n
+{
+    0%{
+        
+        transform: translate(-50%, 0%);
+    }
+
+    100%{
+        
+        transform: translate(-50%, 100%);
+        
+    }
+}
+
+
+
+#menu_open{
+    display: inline-block;
+    vertical-align: 4%;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+#menu{
+  position: fixed;
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px #ddd;
+  width: 100%;
+  max-width: 800px;
+  height: 66vh;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  bottom: 0px;
+  z-index: 5;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: none;
+}
+
+.close_button{
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+}
+
+#menu_link ul, li, a{
+    list-style: none;
+    color: #000;
+    text-decoration: none;
+    margin: 4px;
+    font-size: 22px;
+}
+
+.appwin{
+    display: inline-block;
+    padding: 25px;
+    box-shadow: 0px 0px 4px 0px #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    width: 250px;
+    height: 118px;
+    animation: 0.2s scale_anime2;
+    
+}
+
+.appwin:hover{
+    animation: 0.2s scale_anime;
+    scale: 0.9;
+    
+}
+
+
+@keyframes scale_anime{
+    0%{
+        scale: 1;
+    }
+
+    100%{
+        scale: 0.9;
+    }
+}
+
+@keyframes scale_anime2{
+    0%{
+        scale: 0.9;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
+
+
+/* HTML:  */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    --_c:no-repeat radial-gradient(farthest-side,#74b4d1 92%,#0000);
+    background: 
+      var(--_c) top,
+      var(--_c) left,
+      var(--_c) right,
+      var(--_c) bottom;
+    background-size: 12px 12px;
+    animation: l7 1s infinite;
+  }
+  @keyframes l7 {to{transform: rotate(.5turn)}}
