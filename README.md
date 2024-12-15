@@ -1,0 +1,1 @@
+U Software Softwarelineupのページと、ソフトウェアの更新データを入れときます
